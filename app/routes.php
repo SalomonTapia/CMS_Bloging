@@ -15,8 +15,13 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+Route::model('posts','Post');
+Route::bind('posts',function($value,$route){
+	return Post::whereId($value)->first();
+});
 
 Route::resource("posts", "PostsController");
+Route::resource('posts.coments','ComentsController');
 Route::resource("users","UsersController");
 Route::resource("coments","ComentsController");
 Route::resource("logs","LogsController");

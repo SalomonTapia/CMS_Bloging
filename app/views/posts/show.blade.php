@@ -1,17 +1,14 @@
 @section('main')
-<h2>Posts</h2>
-@if ( !$post )
-No se encontró la publicación
-@else
-<h2>{{ $post->titulo }}</h2>
-<span>Fecha:{{ $post->created_at }}</span>
+<h2>{{$post->titulo}}</h2>
+<span>Por:{{$post->user->nombre}}
+el {{$post->created_at}}</span>
 <p>
-	{{ $post->contenido }}
+{{$post->contenido}}
 </p>
-<p><strong>Tags: </strong> {{ $post->tags }}
-</p>
-@endif
+<p><strong>Tags:</strong>{{$post->tags}}
 <p>
-	<a href="{{ route('posts.index') }}">Volver a Posts</a>
+
+<p>
+{{link_to_route('posts.index','Volver a Post')}}
 </p>
 @stop

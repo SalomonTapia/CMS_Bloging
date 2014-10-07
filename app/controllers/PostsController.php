@@ -22,7 +22,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create(Post $post)
 	{
-		$this->layout->content = View::make('posts.create', compact('post'));
+		$this->layout->content = View::make('posts.create', compact('posts'));
 	}
 
 	/**
@@ -40,12 +40,12 @@ class PostsController extends \BaseController {
 	 * Display the specified resource.
 	 * GET /posts/{id}
 	 *
-	 * @param  int  $id
+	 * @param  Post  $post
 	 * @return Response
 	 */
-	public function show(/*Post $post*/)
+	public function show(Post $post)
 	{
-		$posts = Post::all();
+		//$posts = Post::all();
 		$this->layout->content = View::make('posts.show', compact('post'));
 	}
 
@@ -53,22 +53,22 @@ class PostsController extends \BaseController {
 	 * Show the form for editing the specified resource.
 	 * GET /posts/{id}/edit
 	 *
-	 * @param  int  $id
+	 * @param  Post  $post
 	 * @return Response
 	 */
 	public function edit(Post $post)
 	{
-		$this->layout->content = View::make('posts.edit', compact('post'));
+		$this->layout->content = View::make('posts.edit', compact('posts'));
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 * PUT /posts/{id}
 	 *
-	 * @param  int  $id
+	 * @param  Post  $post
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Post $post)
 	{
 		//
 	}
@@ -77,10 +77,10 @@ class PostsController extends \BaseController {
 	 * Remove the specified resource from storage.
 	 * DELETE /posts/{id}
 	 *
-	 * @param  int  $id
+	 * @param  Post $post
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Post $post)
 	{
 		//
 	}
