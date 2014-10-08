@@ -20,9 +20,9 @@ class LogsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($id)
 	{
-		
+		$this->layout->content = View::make('logs.create', compact('logs'));
 	}
 
 	/**
@@ -31,9 +31,9 @@ class LogsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($id)
 	{
-		//
+		
 	}
 
 	/**
