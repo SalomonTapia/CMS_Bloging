@@ -22,7 +22,7 @@ class ComentsController extends \BaseController {
 	 */
 	public function create()
 	{
-		
+		$this->layout->content = View::make('coments.create', compact('coments'));
 	}
 
 	/**
