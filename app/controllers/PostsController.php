@@ -20,7 +20,7 @@ class PostsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create(Post $post)
+	public function create()
 	{
 		$this->layout->content = View::make('posts.create', compact('posts'));
 	}
@@ -33,7 +33,10 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input=Input::all();
+		$input['user_id']=1;
+		Post::create($input);
+		return Redirect::route('posts.index')->with('message','El nuevo post se ha creado');
 	}
 
 	/**
@@ -58,7 +61,7 @@ class PostsController extends \BaseController {
 	 */
 	public function edit(Post $post)
 	{
-		$this->layout->content = View::make('posts.edit', compact('posts'));
+		$this->layout->content = View::make('posts.edit', compact('post'));
 	}
 
 	/**

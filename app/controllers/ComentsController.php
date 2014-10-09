@@ -22,18 +22,22 @@ class ComentsController extends \BaseController {
 	 */
 	public function create()
 	{
-		
+		$this->layout->content = View::make('coments.create', compact('coments'));
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /coments
-	 *
+	 * @param  Post $post
 	 * @return Response
 	 */
-	public function store()
+	public function store(Post $post)
 	{
-		//
+		$input=Input::all();
+		$input['post_id'] = $post->id;
+		$input['user_id'] = 1;
+		Coment::create($input);
+		return Redirect::route('posts.show',$post->id)->with('Comentario guardado.');
 	}
 
 	/**
@@ -52,12 +56,12 @@ class ComentsController extends \BaseController {
 	 * Show the form for editing the specified resource.
 	 * GET /coments/{id}/edit
 	 *
-	 * @param  int  $id
+	 *
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit()
 	{
-		//
+		$this->layout->content = View::make('coments.edit', compact('coments'));
 	}
 
 	/**

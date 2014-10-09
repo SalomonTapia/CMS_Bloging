@@ -13,4 +13,6 @@ Aun  no se ha crreado Post en este blog, vuelve pronto
 	@endforeach
 </ul>
 @endif
+<p></p>
+{{link_to_route('posts.create','Crear nuevo post')}}
 @stop

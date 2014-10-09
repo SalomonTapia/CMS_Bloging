@@ -5,10 +5,10 @@
 </head>
 <body>
 
-<div align="center"><h2>Este es un ejemplo de que el proyecto ya funciona...</h2></div>
+<div align="center"><font size="+5" color="#999966"><h2>Alfonso Vásquez Cortes</h2></font></div>
 <br/>
 <br/>
-<div align="center"><font color="blue">Esta es la Pagina principal </font></div>
+<div align="center"><font color="blue">The blister exist </font></div>
 @yield('main')
 </body>
 </html>
