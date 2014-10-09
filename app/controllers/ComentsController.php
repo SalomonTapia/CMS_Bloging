@@ -29,11 +29,16 @@ class ComentsController extends \BaseController {
 	 * Store a newly created resource in storage.
 	 * POST /coments
 	 *
+	 * @param Post $post
 	 * @return Response
 	 */
-	public function store()
+	public function store(Post $post)
 	{
-		//
+		$imput=Input::all();
+		$imput['post_id'] = $post->id;
+		$imput['user_id'] = 1;
+		Coment::create($imput);
+		return Redirect::route('posts.show',$post->id)->with('Comentario guardado.');
 	}
 
 	/**
@@ -81,7 +86,7 @@ class ComentsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		
 	}
 
 }

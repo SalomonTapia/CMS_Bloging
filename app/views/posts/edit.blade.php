@@ -1,1 +1,0 @@
-/var/www/laravel/CMS_Bloging/app/views/posts/edit.blade.php
