@@ -21,7 +21,7 @@ el {{$post->created_at}}</span>
 		
 		
 		<p></p><div align="center"><h3><strong>Agregar nuevo comentario</strong></h3></div><p></p>
-		
+
 		<div align="center">
 		@include('coments/partials/_coment')
 		</div>
@@ -29,5 +29,6 @@ el {{$post->created_at}}</span>
 </p>
 <p align="center">
 {{link_to_route('posts.index','Volver a Post')}}<p></p>
+{{link_to_route('posts.edit','Editar post', $post->id)}}
 </p>
 @stop

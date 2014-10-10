@@ -60,9 +60,9 @@ class PostsController extends \BaseController {
 	 * @param  Post  $post
 	 * @return Response
 	 */
-	public function edit(Post $post)
+	public function edit(Post  $post)
 	{
-		$this->layout->content = View::make('posts.edit', compact('posts'));
+		$this->layout->content = View::make('posts.edit', compact('post'));
 	}
 
 	/**
@@ -74,7 +74,10 @@ class PostsController extends \BaseController {
 	 */
 	public function update(Post $post)
 	{
-		//
+		$input = array_except(Input::all(), '_method');
+		$post->update($input);
+
+		$this->layout->content = View::make('posts.show', compact('post'))->with('message', 'Post actualizado');
 	}
 
 	/**

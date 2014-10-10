@@ -17,7 +17,6 @@ class ComentsController extends \BaseController {
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /coments/create
-	 *
 	 * @return Response
 	 */
 	public function create()
@@ -62,8 +61,7 @@ class ComentsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
-	}
+		$this->layout->content = View::make('coments.edit', compact('coment'));	}
 
 	/**
 	 * Update the specified resource in storage.
