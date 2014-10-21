@@ -10,8 +10,11 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
+		
 		$users = User::all();
 		$this->layout->content = View::make('users.index', compact('users'));
+		
+		//return View::make('users/list');
 	}
 
 	/**

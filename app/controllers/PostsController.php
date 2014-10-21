@@ -90,6 +90,7 @@ class PostsController extends \BaseController {
 	public function destroy(Post $post)
 	{
 		
+		
 	}
 
 }

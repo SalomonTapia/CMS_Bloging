@@ -49,7 +49,7 @@ class ComentsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$this->layout->content = View::make('coments.show', compact('coment'));
+		$this->layout->content = View::make('coments.show', compact('coments'));
 	}
 
 	/**
@@ -79,12 +79,14 @@ class ComentsController extends \BaseController {
 	 * Remove the specified resource from storage.
 	 * DELETE /coments/{id}
 	 *
-	 * @param  int  $id
+	 * 
+	 * @param  int $id
 	 * @return Response
 	 */
 	public function destroy($id)
 	{
-		
+		$coment = Coment::find($id);
+		$coment->delete();
+		return Redirect::route('coments.destroy', $coments->$id)->with('message', 'comentario eliminado');
 	}
-
 }

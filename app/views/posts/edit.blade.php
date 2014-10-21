@@ -5,7 +5,7 @@
 @include('posts/partials/_edit',['submit_text'=>'Actualizar'])
 {{Form::close()}}-->
 
-	{{ Form::model($post, ['method' => 'PATCH', 'route' => ['posts.update', $post->id]]) }}
+	{{ Form::model($post,  array('method' => 'PATCH', 'route' => ['posts.update', $post->id],'role' => 'form', 'class' => 'form-horizontal') ) }}
 		@include('posts/partials/_form', ['submit_text' => 'Actualizar'])
 	{{ Form::close()}}
 

@@ -1,25 +1,23 @@
-<div align="left">
-	<div>
-		{{Form::label('titulo','Título: ')}}
-		{{Form::text('titulo') }}
+	<div class="form-group">
+		{{Form::label('titulo','Título: ', array('class' => 'control-label') )}}
+		{{Form::text('titulo', null, array('class' => 'form-control')) }}
 	</div>
-	<div>
+	<div class="form-group">
 		{{Form::label('descripcion','Descripción: ')}}
-		{{Form::text('descripcion') }}
+		{{Form::text('descripcion',null, array('class' => 'form-control'))  }}
 	</div>
-	<div>
+	<div class="form-group">
 		{{Form::label('imagen','Imágen: ')}}
-		{{Form::text('imagen') }}
+		{{Form::text('imagen', null, array('class' => 'form-control')) }}
 	</div>
-	<div>
+	<div class="form-group">
 		{{Form::label('contenido','Contenido: ')}}
-		{{Form::textarea('contenido') }}
+		{{Form::textarea('contenido', null, array('class' => 'form-control'))  }}
 	</div>
-	<div>
+	<div class="form-group">
 		{{Form::label('tags','Tags: ')}}
-		{{Form::text('tags') }}
+		{{Form::text('tags', null, array('class' => 'form-control'))  }}
 	</div>
-	<div>
-		{{Form::submit($submit_text) }}
+	<div class="form-actions">
+		{{Form::submit($submit_text, array('class' => 'btn btn-primary')) }}
 	</div>
-</div>

@@ -10,8 +10,10 @@ Aun  no se ha crreado Post en este blog, vuelve pronto
 		<strong>{{$post->titulo}}</strong>
 		<p>{{$post->descripcion}}</p></a>
 	</li>
+
 	@endforeach
 </ul>
 @endif
+
 {{link_to_route('posts.create','Nuevo post')}}
 @stop
